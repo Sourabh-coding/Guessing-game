@@ -1,0 +1,267 @@
+<html>
+<link rel="icon" href="correct.jpg">
+  <title>Color-Guess:Guess the colour</title>
+  <img src="correct.jpg" style="width:150px; height:150px; opacity:0.50; background-color:Green;" id="Itsright">
+<img src="incorrect.jpg" style="width:150px; height:150px; opacity:0.50; background-color:Red;" id="Itswrong">
+  <I id="IMR" style="opacity:0;">Nan</I>  <I id="IS"></I>
+  <script>
+    function StartGame(){
+      var Math_Random = Math.floor(Math.random() * 4) + 1;
+      console.log(Math_Random);
+      document.getElementById("IMR").innerHTML = Math_Random;
+      document.getElementById("Nx").style.display = "block";
+      document.getElementById("StartBtn").style.display = "none";
+      var b = document.getElementById("BP");
+      var y = document.getElementById("YP");
+      var g = document.getElementById("GP");
+      var r = document.getElementById("RP");
+      if(Math_Random == 4){
+        b.style.opacity = "1";
+        y.style.opacity = "1";
+        g.style.opacity = "0";
+        r.style.opacity = "0";
+      } else if(Math_Random == 3){
+        g.style.opacity = "1";
+        r.style.opacity = "1";
+        b.style.opacity = "0";
+        y.style.opacity = "0";
+      } else if(Math_Random == 2){
+        y.style.opacity = "1";
+        g.style.opacity = "1";
+        b.style.opacity = "0";
+        r.style.opacity = "0";
+      } else if(Math_Random == 1){
+        b.style.opacity = "1";
+        r.style.opacity = "1";
+        y.style.opacity = "0";
+        g.style.opacity = "0";
+      }
+      
+      
+      
+      var b2 = document.getElementById("BP");
+      var y2 = document.getElementById("YP");
+      var g2 = document.getElementById("GP");
+      var r2 = document.getElementById("RP");
+      var correct = document.getElementById("Itsright");
+      var counter = 30;
+     var timer =  setInterval( () => {
+        counter -= 1;
+        document.getElementById("counter").innerHTML = counter;
+      }, 1000)
+      setTimeout( () => {
+        clearInterval(timer)
+              document.getElementById("Nx").style.display = "none";
+      document.getElementById("StartBtn").style.display = "block";
+      b2.style.opacity ="0";
+      y2.style.opacity ="0";
+      g2.style.opacity ="0";
+      r2.style.opacity ="0";
+        if(correct.style.opacity == "0.50"){
+          alert("GAME OVER SCORE.10")
+        } else {
+          alert("GAME OVER SCORE.6")
+        }
+      }, 30000)
+    }
+    function Next(){
+      var Math_Random2 = Math.floor(Math.random() * 4) + 1;
+      console.log(Math_Random2);
+      document.getElementById("IMR").innerHTML = Math_Random2;
+      var b = document.getElementById("BP");
+      var y = document.getElementById("YP");
+      var g = document.getElementById("GP");
+      var r = document.getElementById("RP");
+      if(Math_Random2 == 4){//Yellow
+        b.style.opacity = "1";
+        y.style.opacity = "1";
+        g.style.opacity = "0";
+        r.style.opacity = "0";
+      } else if(Math_Random2 == 3){//Red
+        g.style.opacity = "1";
+        r.style.opacity = "1";
+        b.style.opacity = "0";
+        y.style.opacity = "0";
+      } else if(Math_Random2 == 2){//Green
+        y.style.opacity = "1";
+        g.style.opacity = "1";
+        b.style.opacity = "0";
+        r.style.opacity = "0";
+      } else if(Math_Random2 == 1){//Blue
+        b.style.opacity = "1";
+        r.style.opacity = "1";
+        y.style.opacity = "0";
+        g.style.opacity = "0";
+      }
+    }
+  </script>
+  <style>
+    #StartBtn{
+      width:150px;
+      height:80px;
+      border-radius:5px;
+      border:1px solid black;
+      display:block;
+      background:#5fdfff;
+      text-align:center;
+      position:relative;
+      left:92.5px;
+    }
+    #Nx{
+    width:150px;
+      height:80px;
+      border-radius:5px;
+      display:none;
+      border:1px solid black;
+      background:#00ff83;
+      text-align:center;
+      position:relative;
+      top:0px;
+      left:93px;
+    }
+  </style>
+  <div id="StartBtn" onclick="StartGame();">
+    <font size="6" style="position:relative; top:20px;"> Start! </font></div>
+<div id="Nx" onclick="Next();">    <font size="6" style="position:relative; top:20px;">Next!</font></div>
+  </div>
+      <font id="YP" Color="Green" Size="10"style="opacity:0;">YELLOW</font>
+    <font id="RP" Color="Blue" Size="10" style="position:relative; left:80px; opacity:0;">RED</font>
+    <font id="BP" Color="Yellow" Size="10" style="position:relative; top:10px; opacity:0;">BLUE</font>
+        <font id="GP" Color="Red" Size="10" style="position:relative; top:10px; left:86px; opacity:0;">GREEN</font>
+        
+        
+        <style>
+          #blue{
+            width:150px;
+            height:150px;
+            background-color:blue;
+            position:relative;
+            top:50px;
+            left:11.25px;
+          }
+          #green{
+            width:150px;
+            height:150px;
+            background-color:green;
+            position:relative;
+            top:-100px;
+            left:160px;
+          }
+          #red{
+            width:150px;
+            height:150px;
+            background-color:red;
+            position:relative;
+            left:11px;
+            top:-100px;
+          }
+          #yellow{
+            width:150px;
+            height:150px;
+            background-color:yellow;
+            position:relative;
+            top:-250px;
+            left:160px;
+          }
+          #counter{
+            position:relative;
+            top:-250px;
+            left:145px;
+          }
+        </style><script>
+        
+        function YB(){
+          
+ var c = document.getElementById("Itsright");
+var ic = document.getElementById("Itswrong");
+    var b = document.getElementById("BP");
+   var g = document.getElementById("GP");
+     var r = document.getElementById("RP");
+   var y = document.getElementById("YP");
+   if(y.style.opacity == "1" && b.style.opacity == "1"){
+     console.log("Yes U R Right");
+    c.style.opacity = "1";
+    setTimeout( () => {
+      document.getElementById("Itsright").style.opacity = "0.50";
+    }, 2000)
+   } else {
+     console.log("Its Wrong");
+     ic.style.opacity = "1";
+     setTimeout( () => {
+      document.getElementById("Itswrong").style.opacity = "0.50";
+    }, 2000)
+   }
+        }
+        </script><script>
+          function RB(){
+    var c = document.getElementById("Itsright");
+var ic = document.getElementById("Itswrong");
+    var b = document.getElementById("BP");
+   var g = document.getElementById("GP");
+     var r = document.getElementById("RP");
+   var y = document.getElementById("YP");
+   if(r.style.opacity == "1" && g.style.opacity == "1"){
+     console.log("Yes U R Right");
+         c.style.opacity = "1";
+    setTimeout( () => {
+      document.getElementById("Itsright").style.opacity = "0.50";
+    }, 2000)
+   } else {
+     console.log("Its Wrong");
+     ic.style.opacity = "1";
+     setTimeout( () => {
+      document.getElementById("Itswrong").style.opacity = "0.50";
+    }, 2000)
+   }
+          }
+          </script><script>
+  function GB(){
+    var c = document.getElementById("Itsright");
+var ic = document.getElementById("Itswrong");
+    var b = document.getElementById("BP");
+   var g = document.getElementById("GP");
+     var r = document.getElementById("RP");
+   var y = document.getElementById("YP");
+   if(y.style.opacity == "1" && g.style.opacity == "1")
+   { console.log("Yes U R Right");
+     c.style.opacity = "1";
+    setTimeout( () => {
+      document.getElementById("Itsright").style.opacity = "0.50";
+    }, 2000) 
+   } else {
+     console.log("Its Wrong");
+     ic.style.opacity = "1";
+     setTimeout( () => {
+      document.getElementById("Itswrong").style.opacity = "0.50";
+    }, 2000)
+   }
+   
+  }
+        </script><script>
+   function BB(){
+     var c = document.getElementById("Itsright");
+var ic = document.getElementById("Itswrong");
+    var b = document.getElementById("BP");
+   var g = document.getElementById("GP");
+     var r = document.getElementById("RP");
+   var y = document.getElementById("YP");
+   if(r.style.opacity == "1" && b.style.opacity == "1"){
+     console.log("Yes U R Right");
+     c.style.opacity = "1";
+    setTimeout( () => {
+      document.getElementById("Itsright").style.opacity = "0.50";
+    }, 2000) 
+   } else {
+     console.log("Its Wrong");
+     ic.style.opacity = "1";
+     setTimeout( () => {
+      document.getElementById("Itswrong").style.opacity = "0.50";
+    }, 2000)
+   }
+   }
+        </script>
+      <div id="blue" onclick="BB()"></div>
+      <div id="green" onclick="GB()"></div>
+        <div id="red" onclick="RB()"></div>
+    <div id="yellow" onclick="YB()"></div>
+        <font id="counter" size="10">30</font>
